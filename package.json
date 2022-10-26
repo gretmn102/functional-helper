@@ -1,0 +1,31 @@
+{
+  "name": "@fering-org/functional-helper",
+  "version": "0.1.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "rmdir": "node -e \"var fs = require('fs');process.argv.slice(1).map((fpath)=>{ try {fs.rmdirSync(fpath,{recursive: true})} catch(e){console.warn('Error folder:', fpath, e)}});process.exit(0);\"",
+    "prepare": "npm run rmdir -- lib && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gretmn102/functional-helper.git"
+  },
+  "author": "gretmn102",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gretmn102/functional-helper/issues"
+  },
+  "homepage": "https://github.com/gretmn102/functional-helper#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "eslint": "^8.26.0",
+    "eslint-config-typescript": "^3.0.0",
+    "typescript": "^4.8.4"
+  }
+}
