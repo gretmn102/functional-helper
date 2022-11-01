@@ -1,3 +1,5 @@
+import Pair from "./pair"
+
 export module MapExt {
   export function ofArray<K, V>(keyValues: [K, V][]): Map<K, V> {
     const res = new Map()
@@ -15,6 +17,38 @@ export module MapExt {
       i++
     })
     return xs
+  }
+
+  type MapSerializeType<K, V> = {
+    dataType: "Map"
+    value: Pair<K, V>[]
+  }
+
+  /**
+   * usage: `JSON.stringify(objWithMap, replacer)`
+   */
+  export function replacer<K, V>(_key: K, value: V): MapSerializeType<K, V> | V {
+    if (value instanceof Map) {
+      return {
+        dataType: "Map",
+        value: Array.from(value.entries()), // or with spread: value: [...value]
+      }
+    }
+
+    return value
+  }
+
+  /**
+   * usage: `JSON.parse(json, reviver)`
+   */
+  export function reviver<K, V>(_key: K, value: MapSerializeType<K, V>) {
+    if (typeof value === "object" && value !== null) {
+      if (value.dataType === "Map") {
+        return new Map(value.value)
+      }
+    }
+
+    return value
   }
 }
 

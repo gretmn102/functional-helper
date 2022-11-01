@@ -8,7 +8,7 @@ describe("MapExt.toArray", () => {
     const act = MapExt.toArray(new Map(), (k, v) => [k, v])
 
     expect(act).toStrictEqual(exp)
-  }),
+  })
   test("2, 3, 42", () => {
     const exp: [number, string][] = [
       [2, "2"],
@@ -18,6 +18,27 @@ describe("MapExt.toArray", () => {
 
     const act = MapExt.toArray(MapExt.ofArray(exp), (k, v) => [k, v])
 
+    expect(act).toStrictEqual(exp)
+  })
+})
+
+describe("MapExt.replacer MapExt.reviver", () => {
+  test("MapExt.toArray", () => {
+    const exp = {
+      items: {
+        0: "abc",
+        1: "def",
+      },
+      x: {
+        y: {
+          "0": "123",
+          "1": "321",
+        }
+      }
+    }
+
+    const json = JSON.stringify(exp, MapExt.replacer)
+    const act = JSON.parse(json, MapExt.reviver)
     expect(act).toStrictEqual(exp)
   })
 })
