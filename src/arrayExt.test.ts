@@ -119,9 +119,19 @@ describe("ArrayExt.insertBefore", () => {
     const exp = [0, 1, -1, 2, 3]
     expect(act).toStrictEqual(exp)
   })
+  test("[0, 1, 2, 3], -1, 4", () => {
+    const act = ArrayExt.insertBefore([0, 1, 2, 3], -1, 4)
+    const exp = [0, 1, 2, 3, -1]
+    expect(act).toStrictEqual(exp)
+  })
 })
 
 describe("ArrayExt.insertAfter", () => {
+  test("[0, 1, 2, 3], -1, -1", () => {
+    const act = ArrayExt.insertAfter([0, 1, 2, 3], -1, -1)
+    const exp = [-1, 0, 1, 2, 3]
+    expect(act).toStrictEqual(exp)
+  })
   test("[0, 1, 2, 3], -1, 0", () => {
     const act = ArrayExt.insertAfter([0, 1, 2, 3], -1, 0)
     const exp = [0, -1, 1, 2, 3]

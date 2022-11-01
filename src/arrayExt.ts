@@ -116,7 +116,7 @@ export module ArrayExt {
   }
 
   export function insertBefore<T>(arr: T[], item: T, at: number): T[] {
-    if (!(0 <= at && at < arr.length)) {
+    if (!(0 <= at && at <= arr.length)) {
       throw new Error("The srcIndex was outside the range of elements in the list.")
     }
 
@@ -133,7 +133,7 @@ export module ArrayExt {
   }
 
   export function insertAfter<T>(arr: T[], item: T, at: number): T[] {
-    if (!(0 <= at && at < arr.length)) {
+    if (!(-1 <= at && at < arr.length)) {
       throw new Error("The srcIndex was outside the range of elements in the list.")
     }
 
