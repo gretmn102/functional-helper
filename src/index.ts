@@ -5,6 +5,7 @@ import Option from "./option"
 import Choice from "./choice"
 import ArrayExt from "./arrayExt"
 import MapExt from "./mapExt"
+import PathExt from "./pathExt"
 
 export {
   UnionCase, EmptyUnionCase,
@@ -14,4 +15,5 @@ export {
   Choice,
   ArrayExt,
   MapExt,
+  PathExt,
 }
