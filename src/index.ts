@@ -1,4 +1,4 @@
-import UnionCase, { EmptyUnionCase } from "./union"
+import UnionCase from "./union"
 import Result from "./result"
 import Pair from "./pair"
 import Option from "./option"
@@ -8,7 +8,7 @@ import MapExt from "./mapExt"
 import PathExt from "./pathExt"
 
 export {
-  UnionCase, EmptyUnionCase,
+  UnionCase,
   Result,
   Pair,
   Option,

@@ -19,12 +19,10 @@
  *   // | IUnionCase<"Cons", List<T>> // Ok
  * ```
 */
-export interface UnionCase<Name, Fields> {
+export interface UnionCase<Name, Fields = undefined> {
   case: Name
   fields: Fields
 }
-
-export type EmptyUnionCase<Name> = UnionCase<Name, undefined>
 
 export module UnionCase {
   export function mkUnionCase<Name, Fields>(name: Name, fields: Fields): UnionCase<Name, Fields> {
@@ -34,7 +32,7 @@ export module UnionCase {
     }
   }
 
-  export function mkEmptyUnionCase<Name>(name: Name): EmptyUnionCase<Name> {
+  export function mkEmptyUnionCase<Name>(name: Name): UnionCase<Name> {
     return {
       case: name,
       fields: undefined
