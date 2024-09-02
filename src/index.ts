@@ -6,6 +6,7 @@ import Choice from "./choice"
 import ArrayExt from "./arrayExt"
 import MapExt from "./mapExt"
 import PathExt from "./pathExt"
+import Deferred from "./deferred"
 
 export {
   UnionCase,
@@ -16,4 +17,5 @@ export {
   ArrayExt,
   MapExt,
   PathExt,
+  Deferred,
 }
