@@ -14,7 +14,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint src/",
-    "release": "standard-version"
+    "release": "standard-version",
+    "pack": "npm pack --pack-destination dist"
   },
   "repository": {
     "type": "git",
