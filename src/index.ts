@@ -7,6 +7,8 @@ import ArrayExt from "./arrayExt"
 import MapExt from "./mapExt"
 import PathExt from "./pathExt"
 import Deferred from "./deferred"
+import PromiseExt from "./promiseExt"
+
 
 export {
   UnionCase,
@@ -18,4 +20,5 @@ export {
   MapExt,
   PathExt,
   Deferred,
+  PromiseExt,
 }
