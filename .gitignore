@@ -9,4 +9,4 @@ npm-debug.log*
 # Build generated files
 /lib/
 
-/fering-org-functional-helper-0.1.0.tgz
+/dist/
