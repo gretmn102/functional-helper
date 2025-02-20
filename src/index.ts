@@ -8,7 +8,7 @@ import MapExt from "./mapExt"
 import PathExt from "./pathExt"
 import Deferred from "./deferred"
 import PromiseExt from "./promiseExt"
-
+import Mutex from "./mutex"
 
 export {
   UnionCase,
@@ -21,4 +21,5 @@ export {
   PathExt,
   Deferred,
   PromiseExt,
+  Mutex,
 }
