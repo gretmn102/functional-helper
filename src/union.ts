@@ -25,17 +25,18 @@ export interface UnionCase<Name, Fields = undefined> {
 }
 
 export module UnionCase {
-  export function mkUnionCase<Name, Fields>(name: Name, fields: Fields): UnionCase<Name, Fields> {
-    return {
-      case: name,
-      fields: fields
+  export function create<Name>(name: Name): UnionCase<Name>
+  export function create<Name, Fields>(name: Name, fields: Fields): UnionCase<Name, Fields>
+  export function create<Name, Fields>(name: Name, fields?: Fields): UnionCase<Name, Fields> {
+    if (fields) {
+      return {
+        case: name,
+        fields: fields,
+      }
     }
-  }
-
-  export function mkEmptyUnionCase<Name>(name: Name): UnionCase<Name> {
     return {
       case: name,
-      fields: undefined
+      fields: undefined as unknown as Fields,
     }
   }
 }

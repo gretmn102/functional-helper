@@ -23,10 +23,10 @@ namespace Shape {
 }
 
 describe("shape area", () => {
-  const circle: Shape = UnionCase.mkUnionCase("Circle", { radius: 10 })
-  const rectangle: Shape = UnionCase.mkUnionCase("Rectangle", { a: 5, b: 10 })
-  const adot: Shape = UnionCase.mkEmptyUnionCase("Dot")
-  const bdot: Shape = UnionCase.mkUnionCase("Dot", undefined)
+  const circle: Shape = UnionCase.create("Circle", { radius: 10 })
+  const rectangle: Shape = UnionCase.create("Rectangle", { a: 5, b: 10 })
+  const adot: Shape = UnionCase.create("Dot")
+  const bdot: Shape = UnionCase.create("Dot", undefined)
 
   test("circle", () => {
     const act = Shape.area(circle)
