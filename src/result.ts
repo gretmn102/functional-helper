@@ -1,10 +1,10 @@
 export type Result<Ok, Error> = ["Ok", Ok] | ["Error", Error]
 export module Result {
-  export function mkOk<Ok, Error>(v: Ok): Result<Ok, Error> {
+  export function mkOk<Ok>(v: Ok): Result<Ok, never> {
     return ["Ok", v]
   }
 
-  export function mkError<Ok, Error>(v: Error): Result<Ok, Error> {
+  export function mkError<Error>(v: Error): Result<never, Error> {
     return ["Error", v]
   }
 
