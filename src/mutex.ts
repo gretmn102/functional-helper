@@ -3,7 +3,7 @@ import PromiseExt from "./promiseExt"
 export type Mutex = {
   acquire: () => Promise<void>
   release: () => void
-  monitor: <Result>(exec: () => Promise<Result>) => Promise<Result>
+  monitor: <Result>(exec: () => Result) => Promise<Result>
 }
 
 export function create(): Mutex {
@@ -26,7 +26,7 @@ export function create(): Mutex {
   return {
     acquire: acquire,
     release: release,
-    monitor: async <Result>(exec: () => Promise<Result>) => {
+    monitor: async <Result>(exec: () => Result) => {
       await acquire()
       const result = await exec()
       release()

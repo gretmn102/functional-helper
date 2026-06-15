@@ -61,8 +61,8 @@ describe("mutex", () => {
       })
     }
     const inc = async () => {
-      await lock.monitor(async () => {
-        await counter.inc()
+      await lock.monitor(() => {
+        counter.inc()
       })
     }
     await Promise.all([
