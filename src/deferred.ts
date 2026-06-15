@@ -7,15 +7,15 @@ export type Deferred<T> =
 
 export namespace Deferred {
   export function hasNotStartedYet<T>(): Deferred<T> {
-    return UnionCase.mkEmptyUnionCase("HasNotStartedYet")
+    return UnionCase.create("HasNotStartedYet")
   }
 
   export function inProgress<T>(): Deferred<T> {
-    return UnionCase.mkEmptyUnionCase("InProgress")
+    return UnionCase.create("InProgress")
   }
 
   export function resolved<T>(value: T): Deferred<T> {
-    return UnionCase.mkUnionCase("Resolved", value)
+    return UnionCase.create("Resolved", value)
   }
 
   export function reduce<T, U>(
