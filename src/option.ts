@@ -23,6 +23,13 @@ export module Option {
   export function isSome<T>(option: Option<T>): boolean {
     return option !== undefined
   }
+
+  export function get<T>(opt: Option<T>): T {
+    if (opt === undefined) {
+      throw new Error("Argument is undefined")
+    }
+    return opt
+  }
 }
 
 export default Option
