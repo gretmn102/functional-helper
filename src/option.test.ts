@@ -12,3 +12,12 @@ describe("Option", () => {
       .toStrictEqual(Option.mkSome(1))
   })
 })
+
+describe("Option.get", () => {
+  test("get returns value for Some", () => {
+    expect(Option.get(Option.mkSome(1))).toBe(1)
+  })
+  test("get throws for None", () => {
+    expect(() => Option.get(Option.mkNone())).toThrow("Argument is undefined")
+  })
+})
